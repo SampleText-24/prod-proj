@@ -1,4 +1,3 @@
-
 export {
     MainPageAsync as MainPage,
-} from './ui/MainPage.async'
+} from './ui/MainPage.async';

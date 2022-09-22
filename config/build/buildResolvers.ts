@@ -1,5 +1,5 @@
-import webpack from "webpack";
-import { BuildOptions } from "./types/config";
+import webpack from 'webpack';
+import { BuildOptions } from './types/config';
 
 export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
     return {
@@ -7,6 +7,6 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
         // Позволяет не добавлять aliasы и спокойно пользоваться абсолютными импортами
         preferAbsolute: true,
         modules: [options.paths.src, 'node_modules'],
-        mainFiles: ['index']
-    }
+        mainFiles: ['index'],
+    };
 }
