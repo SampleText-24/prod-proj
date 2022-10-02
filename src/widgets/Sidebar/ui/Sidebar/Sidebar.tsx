@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classnames/classNames';
 import React, { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -24,6 +24,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
+                theme={ThemeButton.CLEAR}
             >
                 toggle
             </Button>
