@@ -4,6 +4,7 @@
     background: var(--inverted-bg-color);
     position: relative;
     transition: width 0.3s;
+    border-right: 1px solid var(--primary-color);
 }
 
 .switchers {
@@ -19,6 +20,10 @@
     position: absolute;
     right: -32px;
     bottom: 32px;
+    border-left: 1px solid var(--inverted-bg-color);
+    border-right: 1px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .items {
