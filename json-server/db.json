@@ -8,5 +8,14 @@
   "users": [
     { "id": "1", "username": "admin", "password": "123" }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Alexey",
+    "lastname": "Sokolov",
+    "age": "26",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Tomsk",
+    "username": "Sample Text",
+    "avatar": "https://i.scdn.co/image/ab67616d0000b273684b83ed33504117595866f0"
+  }
 }
