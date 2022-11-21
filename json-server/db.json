@@ -1,18 +1,30 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": 1 }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
-    { "id": "1", "username": "admin", "password": "123" }
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
   ],
   "profile": {
     "firstname": "Alexey",
     "lastname": "Sokolov",
     "age": "26",
-    "currency": "RUB",
+    "currency": "EUR",
     "country": "Russia",
     "city": "Tomsk",
     "username": "Sample Text",
