@@ -21,9 +21,9 @@
     }
   ],
   "profile": {
-    "firstname": "Alexey",
+    "firstname": "Lesha",
     "lastname": "Sokolov",
-    "age": "26",
+    "age": 26,
     "currency": "EUR",
     "country": "Russia",
     "city": "Tomsk",
