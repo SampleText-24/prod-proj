@@ -28,7 +28,7 @@ interface TextProps {
 }
 
 export const Text = memo(({
-    className, text, title, theme = TextTheme.NORMAL, align = TextAlign.CENTER, size = TextSize.M,
+    className, text, title, theme = TextTheme.NORMAL, align = TextAlign.LEFT, size = TextSize.M,
 }: TextProps) => {
     const mods: Mods = {
         [cls[theme]]: true,
