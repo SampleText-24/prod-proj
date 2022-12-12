@@ -6,7 +6,7 @@
       "author": "typicode"
     }
   ],
-  "articles" : [
+  "articles": [
     {
       "id": "1",
       "title": "Sample news",
@@ -14,7 +14,9 @@
       "img": "https://www.olympusimage.com.my/content/000010806.jpg",
       "views": 1022,
       "createdAt": "26.11.2022",
-      "type": ["Some"],
+      "type": [
+        "Some"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -95,6 +97,24 @@
       "text": "some comment 3",
       "articleId": 1,
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Работает что ли?",
+      "id": "R8AxWy4"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Loren ipsum dolor sit ammed",
+      "id": "dnxMGYs"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fdsaasdf",
+      "id": "wHXCPzA"
     }
   ],
   "users": [
@@ -113,14 +133,28 @@
       "role": "USER"
     }
   ],
-  "profile": {
-    "firstname": "Lesha",
-    "lastname": "Sokolov",
-    "age": 26,
-    "currency": "EUR",
-    "country": "Russia",
-    "city": "Tomsk",
-    "username": "Sample Text",
-    "avatar": "https://i.scdn.co/image/ab67616d0000b273684b83ed33504117595866f0"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Alexey",
+      "lastname": "Sokolov",
+      "age": 26,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Tomsk",
+      "username": "Sample Text",
+      "avatar": "https://i.scdn.co/image/ab67616d0000b273684b83ed33504117595866f0"
+    },
+    {
+      "id": "2",
+      "firstname": "Mock",
+      "lastname": "Default",
+      "age": 16,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Tomsk",
+      "username": "Default Nickname",
+      "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg"
+    }
+  ]
 }

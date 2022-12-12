@@ -14,11 +14,21 @@ interface CommentListProps {
 export const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
     const { t } = useTranslation();
 
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.CommentList, {}, [className])}>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        );
+    }
+
     return (
         <div className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length
                 ? comments.map((comment) => (
-                    <CommentCard className={cls.comment} comment={comment} />
+                    <CommentCard key={comment.id} className={cls.comment} comment={comment} />
                 ))
                 : <Text text={t('Комментарии отсутсвуют')} />}
         </div>
