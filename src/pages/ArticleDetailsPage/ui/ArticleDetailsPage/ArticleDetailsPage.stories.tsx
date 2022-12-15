@@ -23,6 +23,12 @@ const article: Article = {
     img: 'https://www.olympusimage.com.my/content/000010806.jpg',
     views: 1022,
     createdAt: '26.11.2022',
+    user: {
+        id: '1',
+        username: 'Sample Text',
+        avatar: 'https://static.stereogum.com/uploads/2020/09/'
+            + 'Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg',
+    },
     type: [ArticleType.IT],
     blocks: [
         {
