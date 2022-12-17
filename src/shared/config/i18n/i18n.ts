@@ -12,7 +12,8 @@ i18n
         // Язык по умолчанию
         fallbackLng: 'ru',
         // Глобальная переменная создана с помощью плагина webpack.DefinePlugin
-        debug: __IS_DEV__,
+        // debug: __IS_DEV__,
+        debug: false,
 
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
