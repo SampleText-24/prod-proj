@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classnames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text } from 'shared/ui/Text/Text';
+import { HTMLAttributeAnchorTarget } from 'react';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -11,6 +12,7 @@ interface ArticleListProps {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -24,6 +26,7 @@ export const ArticleList = ({
     articles,
     view = ArticleView.SMALL,
     isLoading,
+    target,
 }: ArticleListProps) => {
     const { t } = useTranslation();
 
@@ -33,6 +36,7 @@ export const ArticleList = ({
             view={view}
             className={cls.card}
             key={article.id}
+            target={target}
         />
     );
 
