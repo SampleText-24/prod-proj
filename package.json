@@ -63,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-sample-text-plugin": "^0.0.1",
     "eslint-plugin-storybook": "^0.6.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
@@ -99,6 +100,10 @@
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "loki": {
     "configurations": {
