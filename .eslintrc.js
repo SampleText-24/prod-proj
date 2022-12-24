@@ -45,7 +45,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to', 'target'],
+            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'],
         }],
         'max-len': ['error', {
             ignoreComments: true,
@@ -65,10 +65,13 @@ module.exports = {
         __API__: true,
         __PROJECT__: true,
     },
-    overrides: [{
-        files: ['**/src/**/*.test.{ts,tsx}'],
-        rules: {
-            'i18next/no-literal-string': 'off',
+    overrides: [
+        {
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off',
+            },
         },
-    }],
+    ],
 };

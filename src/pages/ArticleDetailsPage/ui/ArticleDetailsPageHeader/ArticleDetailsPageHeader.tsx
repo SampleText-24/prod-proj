@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Button } from 'shared/ui/Button/Button';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article';
+import { HStack } from 'shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
-import cls from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string
@@ -28,18 +28,17 @@ export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeader
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+        <HStack max justify="between" className={classNames('', {}, [className])}>
             <Button onClick={onBackToList}>
                 {t('Назад к списку')}
             </Button>
             {canEdit && (
                 <Button
-                    className={cls.editBtn}
                     onClick={onEditArticle}
                 >
                     {t('Редактировать')}
                 </Button>
             )}
-        </div>
+        </HStack>
     );
 };

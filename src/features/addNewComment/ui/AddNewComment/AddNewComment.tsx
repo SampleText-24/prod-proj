@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from 'shared/ui/Stack';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
 import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/addNewCommentSelectors';
 import cls from './AddNewComment.module.scss';
@@ -36,7 +37,7 @@ const AddNewComment = ({ className, onSendComment }: AddNewCommentProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.AddNewComment, {}, [className])}>
+            <HStack justify="between" max className={classNames(cls.AddNewComment, {}, [className])}>
                 <Input
                     className={cls.input}
                     placeholder={t('Введите текст комментария')}
@@ -49,7 +50,7 @@ const AddNewComment = ({ className, onSendComment }: AddNewCommentProps) => {
                 >
                     {t('Отправить')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 };
