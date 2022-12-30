@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classnames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ArticleSortField, ArticleView, ArticleViewSelector } from 'entities/Article';
 import { useSelector } from 'react-redux';

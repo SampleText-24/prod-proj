@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classnames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Code } from 'shared/ui/Code/Code';
 import { ArticleCodeBlock } from '../../model/types/article';
