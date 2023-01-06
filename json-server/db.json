@@ -621,14 +621,21 @@
       "username": "admin",
       "password": "123",
       "avatar": "https://i.scdn.co/image/ab67616d0000b273684b83ed33504117595866f0",
-      "role": "ADMIN"
+      "roles": ["ADMIN"]
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
       "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg",
-      "role": "USER"
+      "roles": ["USER"]
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg",
+      "roles": ["MANAGER"]
     }
   ],
   "profile": [
