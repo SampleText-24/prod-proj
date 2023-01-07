@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { AddNewComment } from 'features/addNewComment';
 import { CommentList } from 'entities/Comment';
@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from 'shared/ui/Stack';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -19,7 +20,7 @@ import {
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCommentsProps) => {
@@ -45,7 +46,9 @@ export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCom
             <Text
                 title={t('Комментарии')}
             />
-            <AddNewComment onSendComment={onSendComment} />
+            <Suspense fallback={<Skeleton />}>
+                <AddNewComment onSendComment={onSendComment} />
+            </Suspense>
             <CommentList isLoading={commentsIsLoading} comments={comments} />
         </VStack>
     );
