@@ -9,8 +9,8 @@ import { Input } from 'shared/ui/Input/Input';
 import { ArticlesSortSelector } from 'features/ArticlesSortSelector/ArticlesSortSelector';
 import { SortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs/ArticleTypeTabs';
+import { ArticleType } from 'entities/Article/model/consts/articleConsts';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlePageActions } from '../../model/slices/articlePageSlice';
 import {

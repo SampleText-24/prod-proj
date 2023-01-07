@@ -30,7 +30,8 @@
     // loaders вроде ts-loader или babel-loader автоматически создают их
     // и вместо такого импорта -> import * as React from 'react'
     // можно писать такой -> import React from 'react'
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

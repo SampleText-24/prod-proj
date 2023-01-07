@@ -10,6 +10,7 @@ import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { ValidateProfileError } from 'features/editableProfileCard/model/consts/consts';
 import {
     EditableProfileCardHeader,
 } from '../EditableProfileCardHeader/EditableProfileCardHeader';
@@ -22,7 +23,6 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import {
     getProfileValidateErrors,
 } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 
