@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, Suspense, useCallback } from 'react';
-import { Text } from 'shared/ui/Text/Text';
-import { AddNewComment } from 'features/addNewComment';
-import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { VStack } from 'shared/ui/Stack';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { AddNewComment } from '@/features/addNewComment';
+import { CommentList } from '@/entities/Comment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from '@/shared/ui/Stack';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
