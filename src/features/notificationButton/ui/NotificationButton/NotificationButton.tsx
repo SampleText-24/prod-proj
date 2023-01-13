@@ -10,18 +10,19 @@ import { Popover } from '@/shared/ui/Popups';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import cls from './NotificationButton.module.scss';
+import { useDetectDevice } from '@/shared/lib/hooks/useDetectDevice/useDetectDevice';
 
 interface NotificationButtonProps {
     className?: string;
 }
 
-function detectDevice() {
-    const isMobile = window.matchMedia;
-    if (!isMobile) return false;
-
-    const device = isMobile('(pointer:coarse)');
-    return device.matches;
-}
+// function detectDevice() {
+//     const isMobile = window.matchMedia;
+//     if (!isMobile) return false;
+//
+//     const device = isMobile('(pointer:coarse)');
+//     return device.matches;
+// }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
     const { className } = props;
@@ -42,12 +43,12 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     );
 
     useEffect(() => {
-        setIsMobile(detectDevice());
+        setIsMobile(useDetectDevice);
     }, []);
 
     return (
         <div>
-            {!isMobile ? (
+            {isMobile ? (
                 <Popover
                     className={classNames(cls.NotificationButton, {}, [className])}
                     trigger={trigger}
