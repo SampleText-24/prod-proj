@@ -1,37 +1,37 @@
 {
   "notifications": [
-  {
-    "id": "1",
-    "title": "Уведомление 1",
-    "description": "Произошло какое-то событие",
-    "userId": "1"
-  },
-  {
-    "id": "2",
-    "title": "Уведомление 2",
-    "description": "Произошло какое-то событие",
-    "userId": "1",
-    "href": "http://localhost:3000/admin"
-  },
-  {
-    "id": "3",
-    "title": "Уведомление 3",
-    "description": "Произошло какое-то событие",
-    "userId": "1",
-    "href": "http://localhost:3000/admin"
-  },
-  {
-    "id": "4",
-    "title": "Уведомление 4",
-    "description": "Произошло какое-то событие",
-    "userId": "1"
-  },
-  {
-    "id": "5",
-    "title": "Уведомление 1",
-    "description": "Произошло какое-то событие",
-    "userId": "2"
-  }
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
+    }
   ],
   "posts": [
     {
@@ -712,6 +712,86 @@
       "city": "Tomsk",
       "username": "Default Nickname",
       "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 2,
+      "feedback": "",
+      "id": "wNsldKm"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "feedback": "WOW ITS AMAZING",
+      "id": "4SR1-fP"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 2,
+      "feedback": "meh",
+      "id": "-tC_HWI"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 5,
+      "feedback": "!!!!",
+      "id": "HOQ6Hxs"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "id": "3",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "3"
+    },
+    {
+      "userId": "1",
+      "profileId": "4",
+      "rate": 2,
+      "id": "6iCKjxb"
+    },
+    {
+      "userId": "1",
+      "profileId": "5",
+      "rate": 5,
+      "feedback": "3214434",
+      "id": "itd1xPt"
     }
   ]
 }
