@@ -2,28 +2,22 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Input } from './Input';
+import { ThemeSwitcher } from './ThemeSwitcher';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Input',
-    component: Input,
+    title: 'feature/ThemeSwitcher',
+    component: ThemeSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof ThemeSwitcher>;
 
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {
-    placeholder: 'Text',
-    value: '123321',
-};
+Light.args = {};
 
 export const Dark = Template.bind({});
-Dark.args = {
-    placeholder: 'Text',
-    value: '123321',
-};
+Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
