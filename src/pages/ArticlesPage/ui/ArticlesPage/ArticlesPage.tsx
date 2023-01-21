@@ -23,7 +23,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
 
     const onLoadNextPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
+        if (__PROJECT__ !== 'storybook' && __PROJECT__ !== 'jest') {
+            dispatch(fetchNextArticlesPage());
+        }
     }, [dispatch]);
 
     return (
