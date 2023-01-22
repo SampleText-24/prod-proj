@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input';
@@ -8,7 +7,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { HStack } from '@/shared/ui/Stack';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
-import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/addNewCommentSelectors';
+import {
+    useAddNewCommentError, useAddNewCommentText,
+} from '../../model/selectors/addNewCommentSelectors';
 import cls from './AddNewComment.module.scss';
 
 export interface AddNewCommentProps {
@@ -22,8 +23,8 @@ const reducers: ReducersList = {
 
 const AddNewComment = ({ className, onSendComment }: AddNewCommentProps) => {
     const { t } = useTranslation();
-    const text = useSelector(getAddNewCommentText);
-    const error = useSelector(getAddNewCommentError);
+    const text = useAddNewCommentText();
+    const error = useAddNewCommentError();
     const dispatch = useAppDispatch();
 
     const onCommentTextChange = useCallback((value: string) => {

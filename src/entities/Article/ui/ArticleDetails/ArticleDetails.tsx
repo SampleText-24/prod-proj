@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -16,9 +15,9 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {
-    getArticleDetailsData,
-    getArticleDetailsError,
-    getArticleDetailsIsLoading,
+    useArticleDetailsData,
+    useArticleDetailsError,
+    useArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -38,11 +37,11 @@ const reducers: ReducersList = {
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const isLoading = useSelector(getArticleDetailsIsLoading);
-    const article = useSelector(getArticleDetailsData);
-    const error = useSelector(getArticleDetailsError);
+    const isLoading = useArticleDetailsIsLoading();
+    const article = useArticleDetailsData();
+    const error = useArticleDetailsError();
 
-    const renederBlock = useCallback((block: ArticleBlock) => {
+    const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
         case ArticleBlockType.CODE:
             return (
@@ -121,7 +120,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                         <Text text={article?.createdAt} />
                     </HStack>
                 </VStack>
-                {article?.blocks.map(renederBlock)}
+                {article?.blocks.map(renderBlock)}
             </>
 
         );

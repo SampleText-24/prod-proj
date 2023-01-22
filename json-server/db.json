@@ -665,6 +665,18 @@
       "userId": "1",
       "text": "321",
       "id": "KoHFCh-"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "some text",
+      "id": "GxXpYdV"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "gdfs",
+      "id": "xJfLoOh"
     }
   ],
   "users": [
