@@ -19,8 +19,6 @@ export const StoreProvider = ({ children, initialState, asyncReducers }: StorePr
         // navigate,
     );
 
-    console.log('render');
-
     return (
         <Provider store={store}>
             {children}
