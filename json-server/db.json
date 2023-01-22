@@ -730,6 +730,17 @@
       "city": "Tomsk",
       "username": "Default Nickname",
       "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Manager",
+      "lastname": "Default",
+      "age": 16,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Tomsk",
+      "username": "Default Manager",
+      "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg"
     }
   ],
   "article-ratings": [
