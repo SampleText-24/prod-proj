@@ -4,7 +4,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatar from '@/shared/assets/tests/storybook.jpg';
 import { ProfileCard } from './ProfileCard';
 import { Theme } from '@/shared/const/theme';
 
@@ -28,7 +27,7 @@ Light.args = {
         username: 'username',
         city: 'Default city',
         currency: Currency.USD,
-        avatar,
+        avatar: 'https://www.lahiguera.net/cinemania/actores/michael_cera/fotos/10903/michael_cera.jpg',
     },
 };
 
@@ -52,7 +51,7 @@ Dark.args = {
         username: 'username',
         city: 'Default city',
         currency: Currency.USD,
-        avatar,
+        avatar: 'https://www.lahiguera.net/cinemania/actores/michael_cera/fotos/10903/michael_cera.jpg',
     },
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
