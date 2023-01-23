@@ -51,7 +51,7 @@ jobs:
         run: actions/configure-pages@v2
         if: always()
       - name: Upload artifact
-        run: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v1
         if: always()
         with:
           path: 'reports'
