@@ -48,7 +48,7 @@ jobs:
         run: mv .loki reports/
         if: always()
       - name: Setup pages
-        run: actions/configure-pages@v2
+        uses: actions/configure-pages@v2
         if: always()
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
