@@ -706,13 +706,22 @@
       "roles": [
         "MANAGER"
       ]
+    },
+    {
+      "id": "4",
+      "username": "test_user",
+      "password": "123",
+      "avatar": "https://cdn2.albumoftheyear.org/375x/album/9241-chill-out.jpg",
+      "roles": [
+        "MANAGER"
+      ]
     }
   ],
   "profile": [
     {
       "id": "1",
-      "firstname": "asdf",
-      "lastname": "fdsa",
+      "firstname": "afsaasdffsdf",
+      "lastname": "fdsaa",
       "age": 26,
       "currency": "EUR",
       "country": "Russia",
@@ -741,6 +750,17 @@
       "city": "Tomsk",
       "username": "Default Manager",
       "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Test",
+      "lastname": "Profile",
+      "age": 404,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Paper Town",
+      "username": "Test User",
+      "avatar": "https://cdn2.albumoftheyear.org/375x/album/9241-chill-out.jpg"
     }
   ],
   "article-ratings": [
