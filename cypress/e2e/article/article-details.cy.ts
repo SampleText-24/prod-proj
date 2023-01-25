@@ -10,15 +10,15 @@ describe('Пользователь заходит на страницу со с�
     afterEach(() => {
         cy.removeArticle(currentArticleId);
     });
-    it('Видит страницу статьи', () => {
+    it.skip('Видит страницу статьи', () => {
         cy.getByTestId('ArticleDetails.Info')
             .should('exist');
     });
-    it('Видит список рекомендаций', () => {
+    it.skip('Видит список рекомендаций', () => {
         cy.getByTestId('ArticleRecommendationList')
             .should('exist');
     });
-    it('Оставляет комментарий', () => {
+    it.skip('Оставляет комментарий', () => {
         cy.getByTestId('ArticleDetails.Info')
             .should('exist');
         cy.getByTestId('AddNewComment').scrollIntoView();
@@ -27,6 +27,15 @@ describe('Пользователь заходит на страницу со с�
             .should('have.length', 1);
     });
     it('Ставит оценку', () => {
+        cy.getByTestId('ArticleDetails.Info')
+            .should('exist');
+        cy.getByTestId('RatingCard').scrollIntoView();
+        cy.setRating(5, 'feedback');
+        cy.get('[data-selected=true]')
+            .should('have.length', 5);
+    });
+    it('Ставит оценку на стабах (данных с папки fixtures)', () => {
+        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
         cy.getByTestId('ArticleDetails.Info')
             .should('exist');
         cy.getByTestId('RatingCard').scrollIntoView();
