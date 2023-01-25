@@ -38,14 +38,21 @@ const AddNewComment = ({ className, onSendComment }: AddNewCommentProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <HStack justify="between" max className={classNames(cls.AddNewComment, {}, [className])}>
+            <HStack
+                data-testid="AddNewComment"
+                justify="between"
+                max
+                className={classNames(cls.AddNewComment, {}, [className])}
+            >
                 <Input
+                    data-testid="AddNewComment.Input"
                     className={cls.input}
                     placeholder={t('Введите текст комментария')}
                     value={text}
                     onChange={onCommentTextChange}
                 />
                 <Button
+                    data-testid="AddNewComment.Button"
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSendHandler}
                 >
