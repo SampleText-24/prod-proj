@@ -18,30 +18,32 @@ interface ArticleInfiniteListProps {
     className?: string;
 }
 
-export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps) => {
-    const { t } = useTranslation();
-    const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
-    const error = useSelector(getArticlesPageError);
-    const view = useSelector(getArticlesPageView);
+export const ArticleInfiniteList = memo(
+    ({ className }: ArticleInfiniteListProps) => {
+        const { t } = useTranslation();
+        const dispatch = useAppDispatch();
+        const articles = useSelector(getArticles.selectAll);
+        const isLoading = useSelector(getArticlesPageIsLoading);
+        const error = useSelector(getArticlesPageError);
+        const view = useSelector(getArticlesPageView);
 
-    const [searchParams] = useSearchParams();
+        const [searchParams] = useSearchParams();
 
-    useInitialEffect(() => {
-        dispatch(initArticlesPage(searchParams));
-    });
+        useInitialEffect(() => {
+            dispatch(initArticlesPage(searchParams));
+        });
 
-    if (error) {
-        return <Text text={t('Ошибка')} />;
-    }
+        if (error) {
+            return <Text text={t('Ошибка')} />;
+        }
 
-    return (
-        <ArticleList
-            className={className}
-            isLoading={isLoading}
-            view={view}
-            articles={articles}
-        />
-    );
-});
+        return (
+            <ArticleList
+                className={className}
+                isLoading={isLoading}
+                view={view}
+                articles={articles}
+            />
+        );
+    },
+);

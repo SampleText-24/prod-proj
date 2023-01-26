@@ -1,10 +1,12 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConsts';
 import {
-    Article,
-} from '../../model/types/article';
+    ArticleBlockType,
+    ArticleType,
+    ArticleView,
+} from '../../model/consts/articleConsts';
+import { Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 export default {
@@ -15,7 +17,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+);
 
 const article: Article = {
     id: '1',
@@ -27,8 +31,9 @@ const article: Article = {
     user: {
         id: '1',
         username: 'Sample Text',
-        avatar: 'https://static.stereogum.com/uploads/2020/09/'
-            + 'Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg',
+        avatar:
+            'https://static.stereogum.com/uploads/2020/09/' +
+            'Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg',
     },
     type: [ArticleType.IT],
     blocks: [
@@ -119,20 +124,18 @@ LoadingSmall.args = {
 
 export const ListSmall = Template.bind({});
 ListSmall.args = {
-    articles: new Array(16).fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index),
-        })),
+    articles: new Array(16).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
     view: ArticleView.SMALL,
 };
 
 export const ListBig = Template.bind({});
 ListBig.args = {
-    articles: new Array(9).fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index),
-        })),
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
     view: ArticleView.BIG,
 };

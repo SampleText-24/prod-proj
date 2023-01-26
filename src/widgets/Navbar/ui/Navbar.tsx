@@ -14,7 +14,7 @@ import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
-    className?: string
+    className?: string;
 }
 
 // Компоненты без асинхронных чанков экспортитуются так
@@ -47,7 +47,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
-
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
@@ -65,10 +64,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 {t('Войти')}
             </Button>
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

@@ -8,10 +8,14 @@ import { Comment } from '../../model/types/comment';
 interface CommentListProps {
     className?: string;
     comments?: Comment[];
-    isLoading?: boolean
+    isLoading?: boolean;
 }
 
-export const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
+export const CommentList = ({
+    className,
+    comments,
+    isLoading,
+}: CommentListProps) => {
     const { t } = useTranslation();
 
     if (isLoading) {
@@ -26,11 +30,13 @@ export const CommentList = ({ className, comments, isLoading }: CommentListProps
 
     return (
         <VStack gap="16" max className={classNames('', {}, [className])}>
-            {comments?.length
-                ? comments.map((comment) => (
+            {comments?.length ? (
+                comments.map((comment) => (
                     <CommentCard key={comment.id} comment={comment} />
                 ))
-                : <Text text={t('Комментарии отсутсвуют')} />}
+            ) : (
+                <Text text={t('Комментарии отсутсвуют')} />
+            )}
         </VStack>
     );
 };

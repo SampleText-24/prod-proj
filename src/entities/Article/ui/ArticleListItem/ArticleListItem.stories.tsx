@@ -13,7 +13,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+    <ArticleListItem {...args} />
+);
 
 const article = {
     id: '1',
@@ -28,9 +30,7 @@ const article = {
         // eslint-disable-next-line max-len
         avatar: 'https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg',
     },
-    type: [
-        'IT',
-    ],
+    type: ['IT'],
     blocks: [
         {
             id: '1',

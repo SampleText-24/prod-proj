@@ -12,17 +12,18 @@ export default {
     },
 } as ComponentMeta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+    <AvatarDropdown {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = [StoreDecorator(
-    {
+Normal.args = {};
+Normal.decorators = [
+    StoreDecorator({
         user: {
             authData: {
                 avatar: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg',
             },
         },
-    },
-)];
+    }),
+];

@@ -8,8 +8,8 @@ import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
     className?: string;
-    view: ArticleView,
-    onViewClick?: (view: ArticleView) => void,
+    view: ArticleView;
+    onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -23,7 +23,11 @@ const viewTypes = [
     },
 ];
 
-export const ArticleViewSelector = ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+export const ArticleViewSelector = ({
+    className,
+    view,
+    onViewClick,
+}: ArticleViewSelectorProps) => {
     const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
     };
@@ -38,7 +42,9 @@ export const ArticleViewSelector = ({ className, view, onViewClick }: ArticleVie
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [cls.notSelected]: viewType.view !== view })}
+                        className={classNames('', {
+                            [cls.notSelected]: viewType.view !== view,
+                        })}
                     />
                 </Button>
             ))}

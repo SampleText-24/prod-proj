@@ -4,7 +4,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { useLoginError } from '../../model/selectors/getLoginError/getLoginError';
@@ -32,13 +35,19 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const error = useLoginError();
     const { setUsername, setPassword } = useLoginActions();
 
-    const onChangeUsername = useCallback((value: string) => {
-        setUsername(value);
-    }, [setUsername]);
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            setUsername(value);
+        },
+        [setUsername],
+    );
 
-    const onChangePassword = useCallback((value: string) => {
-        setPassword(value);
-    }, [setPassword]);
+    const onChangePassword = useCallback(
+        (value: string) => {
+            setPassword(value);
+        },
+        [setPassword],
+    );
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
@@ -48,14 +57,15 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [dispatch, onSuccess, password, username]);
 
     return (
-        <DynamicModuleLoader
-            removeAfterUnmount
-            reducers={initialReducers}
-        >
+        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text text={t('Форма авторизации')} />
-                {error
-                && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+                {error && (
+                    <Text
+                        text={t('Вы ввели неверный логин или пароль')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     autofocus
                     type="text"

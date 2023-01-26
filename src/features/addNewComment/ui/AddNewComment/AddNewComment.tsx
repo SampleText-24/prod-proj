@@ -4,11 +4,18 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack } from '@/shared/ui/Stack';
-import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
 import {
-    useAddNewCommentError, useAddNewCommentText,
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from '@/shared/ui/Stack';
+import {
+    addNewCommentActions,
+    addNewCommentReducer,
+} from '../../model/slices/addNewCommentSlice';
+import {
+    useAddNewCommentError,
+    useAddNewCommentText,
 } from '../../model/selectors/addNewCommentSelectors';
 import cls from './AddNewComment.module.scss';
 
@@ -27,9 +34,12 @@ const AddNewComment = ({ className, onSendComment }: AddNewCommentProps) => {
     const error = useAddNewCommentError();
     const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addNewCommentActions.setText(value));
-    }, [dispatch]);
+    const onCommentTextChange = useCallback(
+        (value: string) => {
+            dispatch(addNewCommentActions.setText(value));
+        },
+        [dispatch],
+    );
 
     const onSendHandler = useCallback(() => {
         onSendComment(text || '');

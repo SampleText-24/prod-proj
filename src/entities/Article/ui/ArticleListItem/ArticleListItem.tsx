@@ -8,7 +8,10 @@ import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
-import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
+import {
+    ArticleBlockType,
+    ArticleView,
+} from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import { Article, ArticleTextBlock } from '../../model/types/article';
@@ -24,7 +27,10 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = ({
-    className, article, view, target,
+    className,
+    article,
+    view,
+    target,
 }: ArticleListItemProps) => {
     const { t } = useTranslation();
 
@@ -42,13 +48,19 @@ export const ArticleListItem = ({
         ) as ArticleTextBlock;
         return (
             <div
-                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+                className={classNames(cls.ArticleListItem, {}, [
+                    className,
+                    cls[view],
+                ])}
                 data-testid="ArticleListItem"
             >
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Text
+                            text={article.user.username}
+                            className={cls.username}
+                        />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <Text title={article.title} className={cls.title} />
@@ -85,7 +97,10 @@ export const ArticleListItem = ({
         <AppLink
             target={target}
             to={getRouteArticleDetails(article.id)}
-            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            className={classNames(cls.ArticleListItem, {}, [
+                className,
+                cls[view],
+            ])}
             data-testid="ArticleListItem"
         >
             <Card className={cls.card}>

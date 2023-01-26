@@ -31,37 +31,22 @@ export default {
     // coverageDirectory: undefined,
 
     // An array of regexp pattern strings used to skip coverage collection
-    coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\',
-    ],
+    coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        'node_modules',
-    ],
+    moduleDirectories: ['node_modules'],
 
     // An array of file extensions your modules use
-    moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
     // Для поддержки абсолютных импортов
-    modulePaths: [
-        '<rootDir>src',
-    ],
+    modulePaths: ['<rootDir>src'],
 
     // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
 
     // The glob patterns Jest uses to detect test files
-    testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-    ],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
@@ -73,12 +58,15 @@ export default {
 
     reporters: [
         'default',
-        ['jest-html-reporters', {
-            publicPath: '<rootDir>/reports/unit',
-            filename: 'report.html',
-            // openReport: true,
-            inlineSource: true,
-        }],
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>/reports/unit',
+                filename: 'report.html',
+                // openReport: true,
+                inlineSource: true,
+            },
+        ],
     ],
 
     // A set of global variables that need to be available in all test environments

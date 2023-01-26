@@ -3,7 +3,10 @@ import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
@@ -17,7 +20,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
-    className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {
@@ -35,7 +38,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 {t('Статья не найдена')}
             </Page>
         );
@@ -43,7 +48,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />

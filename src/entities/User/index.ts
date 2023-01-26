@@ -5,18 +5,12 @@ import { userActions, userReducer } from './model/slice/userSlice';
 import { User, UserSchema } from './model/types/user';
 
 export {
-    isUserAdmin, isUserManager, getUserRoles, useUserRoles,
+    isUserAdmin,
+    isUserManager,
+    getUserRoles,
+    useUserRoles,
 } from './model/selectors/roleSelectors';
 
-export {
-    userReducer,
-    userActions,
-    UserRole,
-    getUserAuthData,
-    getUserMounted,
-};
+export { userReducer, userActions, UserRole, getUserAuthData, getUserMounted };
 
-export type {
-    UserSchema,
-    User,
-};
+export type { UserSchema, User };

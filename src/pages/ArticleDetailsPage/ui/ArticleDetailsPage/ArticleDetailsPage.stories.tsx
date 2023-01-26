@@ -13,7 +13,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+    <ArticleDetailsPage {...args} />
+);
 
 const article: Article = {
     id: '1',
@@ -25,8 +27,9 @@ const article: Article = {
     user: {
         id: '1',
         username: 'Sample Text',
-        avatar: 'https://static.stereogum.com/uploads/2020/09/'
-            + 'Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg',
+        avatar:
+            'https://static.stereogum.com/uploads/2020/09/' +
+            'Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg',
     },
     type: [ArticleType.IT],
     blocks: [
@@ -103,8 +106,10 @@ const article: Article = {
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+Normal.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+];

@@ -9,6 +9,7 @@ module.exports = {
         'airbnb',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -27,13 +28,13 @@ module.exports = {
         'unused-imports',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
         'unused-imports/no-unused-imports': 'error',
-        indent: [2, 4],
-        'react/jsx-filename-extension': [2, {
-            extensions: ['.js', '.jsx', '.tsx'],
-        }],
+        'react/jsx-filename-extension': [
+            2,
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
+        ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -45,14 +46,30 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'role', 'as'],
-        }],
-        'max-len': ['error', {
-            ignoreComments: true,
-            code: 121,
-        }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: [
+                    'data-testid',
+                    'to',
+                    'target',
+                    'justify',
+                    'align',
+                    'direction',
+                    'gap',
+                    'role',
+                    'as',
+                ],
+            },
+        ],
+        'max-len': [
+            'error',
+            {
+                ignoreComments: true,
+                code: 131,
+            },
+        ],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
@@ -65,7 +82,11 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
             },
         ],
         'sample-text-plugin/layer-imports': [

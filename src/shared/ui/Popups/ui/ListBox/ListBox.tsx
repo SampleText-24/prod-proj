@@ -25,55 +25,73 @@ interface ListBoxProps {
     label?: string;
 }
 
-export const ListBox = memo(({
-    className, items, value, defaultValue, onChange, readonly, direction = 'bottom right', label,
-}: ListBoxProps) => {
-    const optionsClasses = [mapDirectionClass[direction]];
+export const ListBox = memo(
+    ({
+        className,
+        items,
+        value,
+        defaultValue,
+        onChange,
+        readonly,
+        direction = 'bottom right',
+        label,
+    }: ListBoxProps) => {
+        const optionsClasses = [mapDirectionClass[direction]];
 
-    return (
-        <HStack gap="4">
-            {label
-                && <span className={classNames('', { [popupCls.disabled]: readonly })}>{`${label}>`}</span>}
-            <HListBox
-                disabled={readonly}
-                as="div"
-                className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
-                value={value}
-                onChange={onChange}
-            >
+        return (
+            <HStack gap="4">
+                {label && (
+                    <span
+                        className={classNames('', {
+                            [popupCls.disabled]: readonly,
+                        })}
+                    >{`${label}>`}</span>
+                )}
+                <HListBox
+                    disabled={readonly}
+                    as="div"
+                    className={classNames(cls.ListBox, {}, [
+                        className,
+                        popupCls.popup,
+                    ])}
+                    value={value}
+                    onChange={onChange}
+                >
+                    <HListBox.Button
+                        disabled={readonly}
+                        className={cls.trigger}
+                    >
+                        <Button disabled={readonly}>
+                            {value ?? defaultValue}
+                        </Button>
+                    </HListBox.Button>
 
-                <HListBox.Button disabled={readonly} className={cls.trigger}>
-                    <Button disabled={readonly}>
-                        {value ?? defaultValue}
-                    </Button>
-                </HListBox.Button>
-
-                <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
-                    {items?.map((item) => (
-                        <HListBox.Option
-                            key={item.value}
-                            value={item.value}
-                            as={Fragment}
-                            disabled={item.disabled}
-                        >
-                            {({ active, selected }) => (
-                                <li
-                                    className={classNames(
-                                        cls.item,
-                                        {
+                    <HListBox.Options
+                        className={classNames(cls.options, {}, optionsClasses)}
+                    >
+                        {items?.map((item) => (
+                            <HListBox.Option
+                                key={item.value}
+                                value={item.value}
+                                as={Fragment}
+                                disabled={item.disabled}
+                            >
+                                {({ active, selected }) => (
+                                    <li
+                                        className={classNames(cls.item, {
                                             [popupCls.active]: active,
                                             [popupCls.disabled]: item.disabled,
-                                        },
-                                    )}
-                                >
-                                    {selected && '✔ '}
-                                    {item.content}
-                                </li>
-                            )}
-                        </HListBox.Option>
-                    ))}
-                </HListBox.Options>
-            </HListBox>
-        </HStack>
-    );
-});
+                                        })}
+                                    >
+                                        {selected && '✔ '}
+                                        {item.content}
+                                    </li>
+                                )}
+                            </HListBox.Option>
+                        ))}
+                    </HListBox.Options>
+                </HListBox>
+            </HStack>
+        );
+    },
+);

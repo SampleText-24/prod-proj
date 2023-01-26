@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof ProfileRating>;
 
-const Template: ComponentStory<typeof ProfileRating> = (args) => <ProfileRating {...args} />;
+const Template: ComponentStory<typeof ProfileRating> = (args) => (
+    <ProfileRating {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

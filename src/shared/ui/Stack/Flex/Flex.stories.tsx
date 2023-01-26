@@ -17,15 +17,9 @@ export const Row = Template.bind({});
 Row.args = {
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };
@@ -35,15 +29,9 @@ RowGap4.args = {
     gap: '4',
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };
@@ -53,15 +41,9 @@ RowGap8.args = {
     gap: '8',
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };
@@ -71,15 +53,9 @@ RowGap16.args = {
     gap: '16',
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };
@@ -89,15 +65,9 @@ Column.args = {
     direction: 'column',
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };
@@ -108,15 +78,9 @@ ColumnAlignEnd.args = {
     direction: 'column',
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };
@@ -127,15 +91,9 @@ ColumnGap16.args = {
     direction: 'column',
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };
@@ -146,15 +104,9 @@ ColumnGap32.args = {
     direction: 'column',
     children: (
         <>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
-            <div>
-                Loren Ipsum Dolor Sit Amed
-            </div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
+            <div>Loren Ipsum Dolor Sit Amed</div>
         </>
     ),
 };

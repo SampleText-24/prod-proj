@@ -9,15 +9,31 @@ interface ArticleListItemSkeletonProps {
     view: ArticleView;
 }
 
-export const ArticleListItemSkeleton = ({ className, view }: ArticleListItemSkeletonProps) => {
+export const ArticleListItemSkeleton = ({
+    className,
+    view,
+}: ArticleListItemSkeletonProps) => {
     if (view === ArticleView.BIG) {
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <div
+                className={classNames(cls.ArticleListItem, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Skeleton border="50%" height={30} width={30} />
-                        <Skeleton width={150} height={16} className={cls.username} />
-                        <Skeleton width={150} height={16} className={cls.date} />
+                        <Skeleton
+                            width={150}
+                            height={16}
+                            className={cls.username}
+                        />
+                        <Skeleton
+                            width={150}
+                            height={16}
+                            className={cls.date}
+                        />
                     </div>
                     <Skeleton width={250} height={24} className={cls.title} />
                     <Skeleton height={200} className={cls.img} />
@@ -30,7 +46,12 @@ export const ArticleListItemSkeleton = ({ className, view }: ArticleListItemSkel
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        <div
+            className={classNames(cls.ArticleListItem, {}, [
+                className,
+                cls[view],
+            ])}
+        >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <Skeleton width={200} height={200} className={cls.img} />

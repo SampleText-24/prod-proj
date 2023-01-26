@@ -1,6 +1,4 @@
-import React, {
-    memo, useCallback, useEffect, useState,
-} from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
@@ -49,22 +47,22 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <div>
             {isMobile ? (
                 <Popover
-                    className={classNames(cls.NotificationButton, {}, [className])}
+                    className={classNames(cls.NotificationButton, {}, [
+                        className,
+                    ])}
                     trigger={trigger}
                     direction="bottom left"
                 >
                     <NotificationList className={cls.notifications} />
                 </Popover>
-            )
-                : (
-                    <>
-                        {trigger}
-                        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                            <NotificationList />
-                        </Drawer>
-                    </>
-                )}
+            ) : (
+                <>
+                    {trigger}
+                    <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                        <NotificationList />
+                    </Drawer>
+                </>
+            )}
         </div>
-
     );
 });

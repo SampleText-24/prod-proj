@@ -10,10 +10,12 @@ import { getCanEditArticle } from '../../model/selectors/article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
-    className?: string
+    className?: string;
 }
 
-export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeaderProps) => {
+export const ArticleDetailsPageHeader = ({
+    className,
+}: ArticleDetailsPageHeaderProps) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const canEdit = useSelector(getCanEditArticle);
@@ -30,16 +32,14 @@ export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeader
     }, [article, navigate]);
 
     return (
-        <HStack max justify="between" className={classNames('', {}, [className])}>
-            <Button onClick={onBackToList}>
-                {t('Назад к списку')}
-            </Button>
+        <HStack
+            max
+            justify="between"
+            className={classNames('', {}, [className])}
+        >
+            <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
             {canEdit && (
-                <Button
-                    onClick={onEditArticle}
-                >
-                    {t('Редактировать')}
-                </Button>
+                <Button onClick={onEditArticle}>{t('Редактировать')}</Button>
             )}
         </HStack>
     );
