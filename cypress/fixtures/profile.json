@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "firstname": "Test",
+  "lastname": "Profile",
+  "age": 404,
+  "currency": "EUR",
+  "country": "Russia",
+  "city": "Paper Town",
+  "username": "Test User",
+  "avatar": "https://cdn2.albumoftheyear.org/375x/album/9241-chill-out.jpg"
+}
