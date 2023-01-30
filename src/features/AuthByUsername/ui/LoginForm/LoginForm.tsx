@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { KeyboardEvent, memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
@@ -56,9 +56,16 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         }
     }, [dispatch, onSuccess, password, username]);
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Enter') onLoginClick().then();
+    };
+
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-            <div className={classNames(cls.LoginForm, {}, [className])}>
+            <div
+                className={classNames(cls.LoginForm, {}, [className])}
+                onKeyDown={handleKeyDown}
+            >
                 <Text text={t('Форма авторизации')} />
                 {error && (
                     <Text

@@ -74,6 +74,11 @@
 
 .disabled {
     opacity: 0.5;
+    cursor: auto;
+
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
 .fullWidth {

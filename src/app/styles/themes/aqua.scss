@@ -1,21 +1,21 @@
 .app_aqua_theme {
-    --bg-color: #47b7b3;
-    --inverted-bg-color: #f4fbfb;
-    --primary-color: #397e93;
-    --secondary-color: #47b7b3;
-    --inverted-primary-color: #397e93;
+    --bg-color: #e0f0ea;
+    --inverted-bg-color: #95adbe;
+    --primary-color: #3c2a4d;
+    --secondary-color: #574f7d;
+    --inverted-primary-color: #271b31;
     --inverted-secondary-color: #397e93;
 
     // skeleton
-    --skeleton-color: #d0d0d0;
-    --skeleton-shadow: #67eae8;
+    --skeleton-color: #c9d8e7;
+    --skeleton-shadow: #95adbe;
 
     // code
-    --code-bg: #d0d0d0;
+    --code-bg: rgba(149, 173, 190, 0.4);
 
     // card
-    --card-bg: #51d3cf;
+    --card-bg: #95adbe;
 
     // listbox
-    --listbox-bg: #51d3cf;
+    --listbox-bg: #95adbe;
 }

@@ -785,8 +785,8 @@
   "profile": [
     {
       "id": "1",
-      "firstname": "afsaasdffsdf",
-      "lastname": "fdsaa",
+      "firstname": "Sample",
+      "lastname": "Text",
       "age": 26,
       "currency": "EUR",
       "country": "Russia",
