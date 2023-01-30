@@ -25,7 +25,7 @@ const article: Article = {
     id: '1',
     title: 'Sample news',
     subtitle: 'Some subtitle',
-    img: 'https://www.olympusimage.com.my/content/000010806.jpg',
+    img: 'https://i.scdn.co/image/ab67616d0000b2734c8e84950062e0ecc114a1a5',
     views: 1022,
     createdAt: '26.11.2022',
     user: {
