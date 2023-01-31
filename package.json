@@ -31,7 +31,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": ["prettier --list-different", "eslint"]
+    "**/*.{ts,tsx}": ["prettier --list-different", "eslint"],
+    "**/*.scss": ["npx stylelint --fix"]
   },
   "keywords": [],
   "author": "",

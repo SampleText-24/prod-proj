@@ -30,7 +30,5 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--inverted-primary-color);    /* цвет плашки */
-    border-radius: 20px;       /* закругления плашки */
-    border: 3px solid var(--primary-color);  /* padding вокруг плашки */
+    background-color: var(--inverted-primary-color);    /* цвет бегунка */
 }
