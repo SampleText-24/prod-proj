@@ -19,18 +19,31 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
     <ProfileCard {...args} />
 );
 
+const data = {
+    firstname: 'admin',
+    age: 22,
+    country: Country.Russia,
+    lastname: 'Sample Text',
+    username: 'username',
+    city: 'Default city',
+    currency: Currency.USD,
+    avatar: 'https://www.lahiguera.net/cinemania/actores/michael_cera/fotos/10903/michael_cera.jpg',
+};
+
 export const Light = Template.bind({});
 Light.args = {
-    data: {
-        firstname: 'admin',
-        age: 22,
-        country: Country.Russia,
-        lastname: 'Sample Text',
-        username: 'username',
-        city: 'Default city',
-        currency: Currency.USD,
-        avatar: 'https://www.lahiguera.net/cinemania/actores/michael_cera/fotos/10903/michael_cera.jpg',
-    },
+    data,
+    readonly: true,
+};
+
+export const LightCanEdit = Template.bind({});
+LightCanEdit.args = {
+    data,
+};
+
+export const LightWithoutImg = Template.bind({});
+LightWithoutImg.args = {
+    data: { ...data, avatar: 'q' },
 };
 
 export const LightWithError = Template.bind({});
@@ -45,18 +58,16 @@ LightLoading.args = {
 
 export const Dark = Template.bind({});
 Dark.args = {
-    data: {
-        firstname: 'admin',
-        age: 22,
-        country: Country.Russia,
-        lastname: 'Sample Text',
-        username: 'username',
-        city: 'Default city',
-        currency: Currency.USD,
-        avatar: 'https://www.lahiguera.net/cinemania/actores/michael_cera/fotos/10903/michael_cera.jpg',
-    },
+    data,
+    readonly: true,
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkCanEdit = Template.bind({});
+DarkCanEdit.args = {
+    data,
+};
+DarkCanEdit.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const DarkWithError = Template.bind({});
 DarkWithError.args = {

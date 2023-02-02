@@ -4,6 +4,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleView } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/Article/ArticleListItem',
@@ -114,3 +116,37 @@ Small.args = {
     view: ArticleView.SMALL,
     article,
 };
+
+export const SmallNotFoundImg = Template.bind({});
+SmallNotFoundImg.args = {
+    view: ArticleView.SMALL,
+    article: { ...article, img: '' },
+};
+
+export const BigDark = Template.bind({});
+BigDark.args = {
+    view: ArticleView.BIG,
+    article,
+};
+BigDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BigDarkNotFoundImg = Template.bind({});
+BigDarkNotFoundImg.args = {
+    view: ArticleView.BIG,
+    article: { ...article, img: '' },
+};
+BigDarkNotFoundImg.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SmallDark = Template.bind({});
+SmallDark.args = {
+    view: ArticleView.SMALL,
+    article,
+};
+SmallDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SmallDarkNotFoundImg = Template.bind({});
+SmallDarkNotFoundImg.args = {
+    view: ArticleView.SMALL,
+    article: { ...article, img: '' },
+};
+SmallDarkNotFoundImg.decorators = [ThemeDecorator(Theme.DARK)];

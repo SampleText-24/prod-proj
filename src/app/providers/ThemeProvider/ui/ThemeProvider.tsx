@@ -22,6 +22,9 @@ const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
         [theme],
     );
 
+    // Вешает класс на боди, что бы цвета работали в модалках
+    document.body.className = theme;
+
     return (
         <ThemeContext.Provider value={defaultProps}>
             {children}

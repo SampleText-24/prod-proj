@@ -6,7 +6,7 @@ import { CurrencySelect } from './CurrencySelect';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'entities/CountrySelect',
+    title: 'entities/CurrencySelect',
     component: CurrencySelect,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -17,9 +17,9 @@ const Template: ComponentStory<typeof CurrencySelect> = (args) => (
     <CurrencySelect {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Normal = Template.bind({});
+Normal.args = {};
 
-export const InvertedPrimary = Template.bind({});
-InvertedPrimary.args = {};
-InvertedPrimary.decorators = [ThemeDecorator(Theme.DARK)];
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

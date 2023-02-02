@@ -131,11 +131,31 @@ ListSmall.args = {
     view: ArticleView.SMALL,
 };
 
+export const ListSmallNotFoundImg = Template.bind({});
+ListSmallNotFoundImg.args = {
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+        img: '',
+    })),
+    view: ArticleView.SMALL,
+};
+
 export const ListBig = Template.bind({});
 ListBig.args = {
     articles: new Array(9).fill(0).map((item, index) => ({
         ...article,
         id: String(index),
+    })),
+    view: ArticleView.BIG,
+};
+
+export const ListBigNotFoundImg = Template.bind({});
+ListBigNotFoundImg.args = {
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+        img: '',
     })),
     view: ArticleView.BIG,
 };

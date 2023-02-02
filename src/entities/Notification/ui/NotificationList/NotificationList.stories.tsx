@@ -10,6 +10,32 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/notifications`,
+                method: 'GET',
+                status: 200,
+                response: [
+                    {
+                        id: '1',
+                        title: 'Уведомление',
+                        description: 'Описание',
+                    },
+                    {
+                        id: '2',
+                        title: 'Уведомление 2',
+                        description: 'Описание 2',
+                    },
+                    {
+                        id: '3',
+                        title: 'Уведомление 3',
+                        description: 'Описание 3',
+                    },
+                ],
+            },
+        ],
+    },
 } as ComponentMeta<typeof NotificationList>;
 
 const Template: ComponentStory<typeof NotificationList> = (args) => (
@@ -19,29 +45,7 @@ const Template: ComponentStory<typeof NotificationList> = (args) => (
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator({})];
-Normal.parameters = {
-    mockData: [
-        {
-            url: `${__API__}/notifications`,
-            method: 'GET',
-            status: 200,
-            response: [
-                {
-                    id: '1',
-                    title: 'Уведомление',
-                    description: 'Описание',
-                },
-                {
-                    id: '2',
-                    title: 'Уведомление 2',
-                    description: 'Описание 2',
-                },
-                {
-                    id: '3',
-                    title: 'Уведомление 3',
-                    description: 'Описание 3',
-                },
-            ],
-        },
-    ],
-};
+
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [StoreDecorator({})];

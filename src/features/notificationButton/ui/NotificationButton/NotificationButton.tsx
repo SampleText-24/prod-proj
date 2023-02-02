@@ -44,7 +44,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     }, []);
 
     return (
-        <div>
+        <div className={cls.center}>
             {isMobile ? (
                 <Popover
                     className={classNames(cls.NotificationButton, {}, [

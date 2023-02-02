@@ -3,11 +3,13 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {
-    ArticleType,
     ArticleBlockType,
+    ArticleType,
 } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/Article/ArticleDetails',
@@ -116,6 +118,16 @@ Normal.decorators = [
     }),
 ];
 
+export const NormalImgNotFound = Template.bind({});
+NormalImgNotFound.args = {};
+NormalImgNotFound.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: { ...article, img: '' },
+        },
+    }),
+];
+
 export const Loading = Template.bind({});
 Loading.args = {};
 Loading.decorators = [
@@ -134,4 +146,47 @@ Error.decorators = [
             error: 'some error',
         },
     }),
+];
+
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+    ThemeDecorator(Theme.DARK),
+];
+
+export const DarkImgNotFound = Template.bind({});
+DarkImgNotFound.args = {};
+DarkImgNotFound.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: { ...article, img: '' },
+        },
+    }),
+];
+
+export const LoadingDark = Template.bind({});
+LoadingDark.args = {};
+LoadingDark.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            isLoading: true,
+        },
+    }),
+    ThemeDecorator(Theme.DARK),
+];
+
+export const ErrorDark = Template.bind({});
+ErrorDark.args = {};
+ErrorDark.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            error: 'some error',
+        },
+    }),
+    ThemeDecorator(Theme.DARK),
 ];

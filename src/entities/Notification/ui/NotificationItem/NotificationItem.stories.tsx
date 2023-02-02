@@ -1,7 +1,9 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { NotificationItem } from './NotificationItem';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/Notification/NotificationItem',
@@ -23,3 +25,13 @@ Normal.args = {
         description: 'descr1',
     },
 };
+
+export const Dark = Template.bind({});
+Dark.args = {
+    item: {
+        id: '1',
+        title: 'title1',
+        description: 'descr1',
+    },
+};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
