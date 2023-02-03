@@ -4,6 +4,7 @@ import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface ModalProps {
     className?: string;
@@ -28,6 +29,8 @@ export const Modal = ({
         isOpen,
     });
 
+    const { theme } = useTheme();
+
     const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.closing]: isClosing,
@@ -42,6 +45,7 @@ export const Modal = ({
             <div
                 className={classNames(cls.Modal, mods, [
                     className,
+                    theme,
                     'app_modal',
                 ])}
             >

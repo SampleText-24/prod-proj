@@ -17,13 +17,13 @@ const Template: ComponentStory<typeof RatingCard> = (args) => (
     <RatingCard {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Light = Template.bind({});
+Light.args = {
     title: 'Title for rating',
 };
 
-export const NormalWithFeedback = Template.bind({});
-NormalWithFeedback.args = {
+export const LightWithFeedback = Template.bind({});
+LightWithFeedback.args = {
     title: 'Click on star',
     hasFeedback: true,
     feedbackTitle: 'Feedback title',

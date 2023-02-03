@@ -41,11 +41,6 @@ LightCanEdit.args = {
     data,
 };
 
-export const LightWithoutImg = Template.bind({});
-LightWithoutImg.args = {
-    data: { ...data, avatar: 'q' },
-};
-
 export const LightWithError = Template.bind({});
 LightWithError.args = {
     error: 'Some test error',

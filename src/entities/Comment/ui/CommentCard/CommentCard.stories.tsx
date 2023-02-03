@@ -17,8 +17,8 @@ const Template: ComponentStory<typeof CommentCard> = (args) => (
     <CommentCard {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Light = Template.bind({});
+Light.args = {
     comment: {
         id: '1',
         text: 'TEXT',
@@ -26,8 +26,8 @@ Normal.args = {
     },
 };
 
-export const NormalLoading = Template.bind({});
-NormalLoading.args = {
+export const LightLoading = Template.bind({});
+LightLoading.args = {
     comment: {
         id: '1',
         text: 'TEXT',

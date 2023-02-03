@@ -30,19 +30,19 @@ const comments = [
     },
 ];
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Light = Template.bind({});
+Light.args = {
     comments,
 };
 
-export const NormalLoading = Template.bind({});
-NormalLoading.args = {
+export const LightLoading = Template.bind({});
+LightLoading.args = {
     comments,
     isLoading: true,
 };
 
-export const NormalWithoutComments = Template.bind({});
-NormalWithoutComments.args = {};
+export const LightWithoutComments = Template.bind({});
+LightWithoutComments.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {

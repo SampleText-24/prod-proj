@@ -17,8 +17,8 @@ const Template: ComponentStory<typeof CurrencySelect> = (args) => (
     <CurrencySelect {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Light = Template.bind({});
+Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};

@@ -23,7 +23,6 @@ export function buildPlugins({
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
-        new ReactRefreshPlugin(),
         new CircularDependencyPlugin({
             exclude: /node_modules/,
             failOnError: true,
@@ -40,8 +39,11 @@ export function buildPlugins({
     ];
 
     if (isDev) {
+        plugins.push(new ReactRefreshPlugin());
         plugins.push(new webpack.HotModuleReplacementPlugin());
-        plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }));
     }
 
     if (isProd) {

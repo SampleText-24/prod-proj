@@ -108,22 +108,22 @@ const article: Article = {
     ],
 };
 
-export const LoadingBig = Template.bind({});
-LoadingBig.args = {
+export const LightLoadingBig = Template.bind({});
+LightLoadingBig.args = {
     articles: [],
     isLoading: true,
     view: ArticleView.BIG,
 };
 
-export const LoadingSmall = Template.bind({});
-LoadingSmall.args = {
+export const LightLoadingSmall = Template.bind({});
+LightLoadingSmall.args = {
     articles: [],
     isLoading: true,
     view: ArticleView.SMALL,
 };
 
-export const ListSmall = Template.bind({});
-ListSmall.args = {
+export const LightListSmall = Template.bind({});
+LightListSmall.args = {
     articles: new Array(16).fill(0).map((item, index) => ({
         ...article,
         id: String(index),
@@ -131,8 +131,8 @@ ListSmall.args = {
     view: ArticleView.SMALL,
 };
 
-export const ListSmallNotFoundImg = Template.bind({});
-ListSmallNotFoundImg.args = {
+export const LightListSmallNotFoundImg = Template.bind({});
+LightListSmallNotFoundImg.args = {
     articles: new Array(9).fill(0).map((item, index) => ({
         ...article,
         id: String(index),
@@ -141,8 +141,8 @@ ListSmallNotFoundImg.args = {
     view: ArticleView.SMALL,
 };
 
-export const ListBig = Template.bind({});
-ListBig.args = {
+export const LightListBig = Template.bind({});
+LightListBig.args = {
     articles: new Array(9).fill(0).map((item, index) => ({
         ...article,
         id: String(index),
@@ -150,8 +150,8 @@ ListBig.args = {
     view: ArticleView.BIG,
 };
 
-export const ListBigNotFoundImg = Template.bind({});
-ListBigNotFoundImg.args = {
+export const LightListBigNotFoundImg = Template.bind({});
+LightListBigNotFoundImg.args = {
     articles: new Array(9).fill(0).map((item, index) => ({
         ...article,
         id: String(index),

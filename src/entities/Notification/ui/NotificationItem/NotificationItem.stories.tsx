@@ -17,8 +17,8 @@ const Template: ComponentStory<typeof NotificationItem> = (args) => (
     <NotificationItem {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Light = Template.bind({});
+Light.args = {
     item: {
         id: '1',
         title: 'title1',

@@ -8,8 +8,6 @@ import {
 } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/Article/ArticleDetails',
@@ -108,9 +106,9 @@ const article: Article = {
     ],
 };
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [
+export const Light = Template.bind({});
+Light.args = {};
+Light.decorators = [
     StoreDecorator({
         articleDetails: {
             data: article,
@@ -118,9 +116,9 @@ Normal.decorators = [
     }),
 ];
 
-export const NormalImgNotFound = Template.bind({});
-NormalImgNotFound.args = {};
-NormalImgNotFound.decorators = [
+export const LightImgNotFound = Template.bind({});
+LightImgNotFound.args = {};
+LightImgNotFound.decorators = [
     StoreDecorator({
         articleDetails: {
             data: { ...article, img: '' },
@@ -128,9 +126,9 @@ NormalImgNotFound.decorators = [
     }),
 ];
 
-export const Loading = Template.bind({});
-Loading.args = {};
-Loading.decorators = [
+export const LightLoading = Template.bind({});
+LightLoading.args = {};
+LightLoading.decorators = [
     StoreDecorator({
         articleDetails: {
             isLoading: true,
@@ -138,55 +136,12 @@ Loading.decorators = [
     }),
 ];
 
-export const Error = Template.bind({});
-Error.args = {};
-Error.decorators = [
+export const LightError = Template.bind({});
+LightError.args = {};
+LightError.decorators = [
     StoreDecorator({
         articleDetails: {
             error: 'some error',
         },
     }),
-];
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            data: article,
-        },
-    }),
-    ThemeDecorator(Theme.DARK),
-];
-
-export const DarkImgNotFound = Template.bind({});
-DarkImgNotFound.args = {};
-DarkImgNotFound.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            data: { ...article, img: '' },
-        },
-    }),
-];
-
-export const LoadingDark = Template.bind({});
-LoadingDark.args = {};
-LoadingDark.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            isLoading: true,
-        },
-    }),
-    ThemeDecorator(Theme.DARK),
-];
-
-export const ErrorDark = Template.bind({});
-ErrorDark.args = {};
-ErrorDark.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            error: 'some error',
-        },
-    }),
-    ThemeDecorator(Theme.DARK),
 ];

@@ -4,6 +4,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import AddNewComment from './AddNewComment';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'features/AddNewComment',
@@ -17,8 +19,14 @@ const Template: ComponentStory<typeof AddNewComment> = (args) => (
     <AddNewComment {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Light = Template.bind({});
+Light.args = {
     onSendComment: action('onSendComment'),
 };
-Normal.decorators = [StoreDecorator({})];
+Light.decorators = [StoreDecorator({})];
+
+export const Dark = Template.bind({});
+Dark.args = {
+    onSendComment: action('onSendComment'),
+};
+Dark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];

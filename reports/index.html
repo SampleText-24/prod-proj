@@ -7,10 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reports</title>
 </head>
-<body style="">
-<a href="./unit/report.html">Unit report</a>
-<hr>
-<a href=".loki/report.html">Screenshot report</a>
-<hr>
+<style>
+    body {
+        background-color: #000000
+    }
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 26px;
+        transition: 0.3s ease-in-out;
+    }
+    .content:hover {
+        background-color: #4b4b4b;
+        color: #000000;
+    }
+    .content:focus {
+        background-color: #4b4b4b;
+        color: #000000;
+    }
+</style>
+<body>
+<div class="container">
+        <a class="content" href="./unit/report.html">Unit report</a>
+        <a class="content" href=".loki/report.html">Screenshot report</a>
+</div>
 </body>
 </html>

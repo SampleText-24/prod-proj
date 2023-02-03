@@ -15,18 +15,18 @@ const Template: ComponentStory<typeof ArticleRating> = (args) => (
     <ArticleRating {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Light = Template.bind({});
+Light.args = {
     articleId: '1',
 };
-Normal.decorators = [
+Light.decorators = [
     StoreDecorator({
         user: {
             authData: { id: '1' },
         },
     }),
 ];
-Normal.parameters = {
+Light.parameters = {
     mockData: [
         {
             url: `${__API__}/article-ratings?userId=1&articleId=1`,
