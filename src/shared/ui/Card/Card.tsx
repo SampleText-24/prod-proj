@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { HTMLAttributes, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
@@ -21,17 +20,14 @@ export const Card = ({
     theme = CardTheme.NORMAL,
     max,
     ...otherProps
-}: CardProps) => {
-    const { t } = useTranslation();
-    return (
-        <div
-            className={classNames(cls.Card, { [cls.max]: max }, [
-                className,
-                cls[theme],
-            ])}
-            {...otherProps}
-        >
-            {children}
-        </div>
-    );
-};
+}: CardProps) => (
+    <div
+        className={classNames(cls.Card, { [cls.max]: max }, [
+            className,
+            cls[theme],
+        ])}
+        {...otherProps}
+    >
+        {children}
+    </div>
+);

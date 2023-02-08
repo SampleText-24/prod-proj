@@ -9,7 +9,7 @@ i18n.use(Backend)
     .use(initReactI18next)
     .init({
         // Язык по умолчанию
-        fallbackLng: 'ru',
+        fallbackLng: false,
         // Глобальная переменная создана с помощью плагина webpack.DefinePlugin
         // debug: __IS_DEV__,
         debug: false,

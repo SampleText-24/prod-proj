@@ -17,6 +17,10 @@
     cursor: pointer;
 }
 
+.item:hover {
+    opacity: 0.6;
+}
+
 .active {
     color: var(--bg-color);
     background: var(--secondary-color);
