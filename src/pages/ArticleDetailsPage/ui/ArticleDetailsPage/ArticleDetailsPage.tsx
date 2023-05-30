@@ -18,6 +18,7 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlag } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -31,6 +32,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
+    const isArticleRatingEnable = getFeatureFlag('isArticleRatingEnabled');
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -54,7 +56,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    {isArticleRatingEnable && <ArticleRating articleId={id} />}
                     <ArticleRecommendationList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

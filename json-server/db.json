@@ -752,7 +752,10 @@
       "avatar": "https://i.scdn.co/image/ab67616d0000b273684b83ed33504117595866f0",
       "roles": [
         "ADMIN"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": true
+      }
     },
     {
       "id": "2",
@@ -761,7 +764,10 @@
       "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg",
       "roles": [
         "USER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": false
+      }
     },
     {
       "id": "3",
@@ -770,7 +776,10 @@
       "avatar": "https://static.stereogum.com/uploads/2020/09/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven-1601412909-870x870.jpg",
       "roles": [
         "MANAGER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": true
+      }
     },
     {
       "id": "4",
