@@ -18,7 +18,8 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -32,7 +33,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
-    const isArticleRatingEnable = getFeatureFlag('isArticleRatingEnabled');
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -48,6 +48,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         );
     }
 
+    const articleRatingCard = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id} />,
+        off: () => <Card>{t('Рейтинг статей скоро появится')}</Card>,
+    });
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
@@ -56,7 +62,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {isArticleRatingEnable && <ArticleRating articleId={id} />}
+                    {articleRatingCard}
                     <ArticleRecommendationList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

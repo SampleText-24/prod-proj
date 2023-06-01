@@ -13,26 +13,32 @@ npm run start:dev - Запустить сервер и фронтенд прое
 npm run start:vite:dev - Запустить сервер и фронтенд проекта в dev режиме на vite
 ```
 
-
 <h1 align="center"> Скрипты </h1>
 
 ___
 
 ### _Запуск_
+
 - `npm run start` - Запускает проект на webpack dev server
 - `npm run start:vite` - Запускает проект на vite
 - `npm run start:dev` - Запускает проект на webpack dev server + backend (json-server)
 - `npm run start:dev:vite` - Запускает проект на vite + backend (json-server)
 - `npm run start:dev:server` - Запуск backend (json-server)
+
 ### _Сборка_
+
 - `npm run build:prod` - Собирает проект в продакшн
 - `npm run build:dev` - Собирает проект (не минимизирует)
+
 ### _Линтеры_
+
 - `npm run lint:ts` - Проверяет линтером .ts файлы
 - `npm run lint:ts:fix` - Исправляет линтером .ts файлы
 - `npm run lint:scss` - Проверяет линтером .scss файлы
 - `npm run lint:scss:fix` - Исправляет линтером .scss файлы
+
 ### _Тесты_
+
 - `npm run test:unit` - Запускает unit тесты с помощью jest
 - `npm run test:ui` - Запускает скриншотные тесты с помощью loki
 - `npm run test:ui:ok` - Подтверждает новые или изменёные скриншоты
@@ -40,7 +46,9 @@ ___
 - `npm run test:ui:report` - Создаёт полный отчёт для скриншотных тестов
 - `npm run test:ui:json` - Создаёт JSON отчёт для скриншотных тестов
 - `npm run test:ui:html` - Создаёт HTML отчёт для скриншотных тестов
+
 ### _Прочие приколы_
+
 - `npm run storybook` - Запускает Storybook
 - `npm run storybook:build` - Собирает storybook
 - `npm run prepare` - Прекоммит хуки
@@ -50,14 +58,15 @@ ___
 
 ---
 
->_Проект написан в соответствии с методологией [Feature Sliced Design](https://feature-sliced.design/docs/get-started/tutorial)_
+> _Проект написан в соответствии с
+методологией [Feature Sliced Design](https://feature-sliced.design/docs/get-started/tutorial)_
 
 
 <h1 align="center"> Работа с переводами </h1>
 
 ---
 Используется библиотека [i18next](https://react.i18next.com/) для работы с переводами.
->_Файлы с переводами хранятся в public/locales._
+> _Файлы с переводами хранятся в public/locales._
 
 Для комфортной работы лучше установить [плагин](https://github.com/lokalise/i18n-ally) для вашей IDE
 
@@ -65,6 +74,7 @@ ___
 
 ___
 __Используются 4 вида тестов:__
+
 1) Unit тесты на jest - `npm run test:unit`
 2) Тесты на компоненты с React testing library -`npm run test:unit`
 3) Скриншотные тесты с loki `npm run test:ui`
@@ -87,8 +97,8 @@ ___[Подробнее о тестах](/docs/tests.md)___
 | layer-imports      | Проверяет корректность использования слоёв с точки зрения FSD        |
 | public-api-imports | Разрешает импорт других модулей только из public api, есть авто фикс |
 
-
 ### _Запуск_
+
 - `npm run lint:ts` - Проверяет .ts файлы
 - `npm run lint:ts:fix` - Исправляет .ts файлы
 - `npm run lint:scss` - Проверяет .scss файлы
@@ -104,6 +114,7 @@ ___
 Файл со сторикейсами создает рядом с компонентом с расширением `.stories.tsx`
 
 Запустить сторибук можно командой:
+
 - `npm run storybook`
 
 Подробнее о [Storybook](/docs/storybook.md)
@@ -112,17 +123,17 @@ ___
 
 ```typescript jsx
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button, ButtonSize, ButtonTheme } from './Button';
-import { Theme } from '@/shared/const/theme';
+import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import {Button, ButtonSize, ButtonTheme} from './Button';
+import {Theme} from '@/shared/const/theme';
 
 export default {
     title: 'shared/Button',
     component: Button,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        backgroundColor: {control: 'color'},
     },
 } as ComponentMeta<typeof Button>;
 
@@ -144,10 +155,12 @@ Clear.args = {
 
 ___
 Для разработки имеется 2 конфига:
+
 1. Webpack - ./config/build
 2. Vite - vite.config.ts
 
 Вся конфигурация хранится в `/config`
+
 - __/config/build__ - конфигурация webpack
 - __/config/jest__ - конфигурация тестовой среды jest
 - __/config/storybook__ - конфигурация storybook
@@ -174,9 +187,24 @@ ___
 Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 
+
+<h1 align="center"> Работа с feature-flags </h1>
+Для работы с feature flags имеется хелпер toggleFeature в него передаётся объект с опциями:
+
+{ `name`: название фича-флага, `on`: функция, которая сработает после включения фичи, `off`: функция, которая сработает
+после выключения фичи }
+
+Для автоматического удаления фичи имеется скрипт remove-feature.ts, который принемает 2 аргумента:
+
+1. название удаляемого фича-флага
+2. состояние 'on' или 'off'
+
+___
+
 <h1 align="center"> Сущности </h1>
 
 ___
+
 - [Article](/src/entities/Article)
 - [Comment](/src/entities/Comment)
 - [Counter](/src/entities/Counter)
