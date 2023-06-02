@@ -753,6 +753,11 @@
       "roles": [
         "ADMIN"
       ],
+      "jsonSettings": {
+        "theme": "app_aqua_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
       "features": {
         "isArticleRatingEnabled": true
       }
@@ -765,6 +770,11 @@
       "roles": [
         "USER"
       ],
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
       "features": {
         "isArticleRatingEnabled": false
       }
@@ -777,6 +787,11 @@
       "roles": [
         "MANAGER"
       ],
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
       "features": {
         "isArticleRatingEnabled": true
       }

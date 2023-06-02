@@ -21,11 +21,6 @@ export const loginByUsername = createAsyncThunk<
         if (!response.data) {
             throw new Error();
         }
-
-        localStorage.setItem(
-            USER_LOCALSTORAGE_KEY,
-            JSON.stringify(response.data),
-        );
         dispatch(userActions.setAuthData(response.data));
         // если что то ломается то убери нахуй навигейт потом разберёшься
         return response.data;
