@@ -12,10 +12,46 @@ import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
     className?: string;
 }
+
+const NavbarDeprecated = ({ className }: NavbarProps) => {
+    const { t } = useTranslation();
+    return (
+        <header className={classNames(cls.Navbar, {}, [className])}>
+            <Text
+                className={cls.appName}
+                theme={TextTheme.INVERTED}
+                title={t('Sample APP')}
+            />
+            <AppLink
+                className={cls.createBtn}
+                to={getRouteArticleCreate()}
+                theme={AppLinkTheme.INVERTED}
+            >
+                {t('Создать статью')}
+            </AppLink>
+            <HStack gap="16" className={cls.actions}>
+                <NotificationButton />
+                <AvatarDropdown />
+            </HStack>
+        </header>
+    );
+};
+
+const NavbarRedesigned = ({ className }: NavbarProps) => {
+    return (
+        <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+            <HStack gap="16" className={cls.actions}>
+                <NotificationButton />
+                <AvatarDropdown />
+            </HStack>
+        </header>
+    );
+};
 
 // Компоненты без асинхронных чанков экспортитуются так
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -33,24 +69,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <header className={classNames(cls.Navbar, {}, [className])}>
-                <Text
-                    className={cls.appName}
-                    theme={TextTheme.INVERTED}
-                    title={t('Sample APP')}
-                />
-                <AppLink
-                    className={cls.createBtn}
-                    to={getRouteArticleCreate()}
-                    theme={AppLinkTheme.INVERTED}
-                >
-                    {t('Создать статью')}
-                </AppLink>
-                <HStack gap="16" className={cls.actions}>
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-            </header>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={<NavbarRedesigned />}
+                off={<NavbarDeprecated />}
+            />
         );
     }
 

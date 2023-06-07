@@ -754,13 +754,14 @@
         "ADMIN"
       ],
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpen": true
       },
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": true
       }
     },
     {
@@ -778,7 +779,8 @@
         "isArticlesPageWasOpen": true
       },
       "features": {
-        "isArticleRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isAppRedesigned": false
       }
     },
     {
@@ -795,7 +797,8 @@
         "settingsPageHasBeenOpen": false
       },
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": false
       }
     },
     {
@@ -805,7 +808,16 @@
       "avatar": "https://cdn2.albumoftheyear.org/375x/album/9241-chill-out.jpg",
       "roles": [
         "MANAGER"
-      ]
+      ],
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": false
+      }
     }
   ],
   "profile": [

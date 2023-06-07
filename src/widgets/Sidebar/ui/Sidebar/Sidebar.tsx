@@ -8,12 +8,14 @@ import { VStack } from '@/shared/ui/Stack';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppLogo } from '@/shared/ui/AppLogo';
 
 interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = memo(({ className }: SidebarProps) => {
+const DeprecatedSidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
     const sidebarItemsList = useSelector(getSidebarItems);
 
@@ -58,5 +60,68 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 <LangSwitcher short={collapsed} className={cls.lang} />
             </div>
         </aside>
+    );
+};
+
+const RedesignedSidebar = ({ className }: SidebarProps) => {
+    const [collapsed, setCollapsed] = useState(false);
+    const sidebarItemsList = useSelector(getSidebarItems);
+
+    const onToggle = () => {
+        setCollapsed((prev) => !prev);
+    };
+
+    const itemsList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    key={item.path}
+                    item={item}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    );
+
+    return (
+        <aside
+            data-testid="sidebar"
+            className={classNames(
+                cls.SidebarRedesigned,
+                { [cls.collapsed]: collapsed },
+                [className],
+            )}
+        >
+            <AppLogo className={cls.appLogo} />
+        </aside>
+    );
+};
+
+export const Sidebar = memo(({ className }: SidebarProps) => {
+    const [collapsed, setCollapsed] = useState(false);
+    const sidebarItemsList = useSelector(getSidebarItems);
+
+    const onToggle = () => {
+        setCollapsed((prev) => !prev);
+    };
+
+    const itemsList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    key={item.path}
+                    item={item}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    );
+
+    return (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<RedesignedSidebar />}
+            off={<DeprecatedSidebar />}
+        />
     );
 });
