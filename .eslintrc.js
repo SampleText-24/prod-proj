@@ -98,6 +98,7 @@ module.exports = {
             },
         ],
         'react/no-unstable-nested-components': 1,
+        'consistent-return': 1,
     },
     globals: {
         __IS_DEV__: true,

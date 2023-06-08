@@ -35,7 +35,6 @@ function App() {
                             content={<AppRouter />}
                             header={<Navbar />}
                             sidebar={<Sidebar />}
-                            toolbar={<div>qwerqer</div>}
                         />
                     </Suspense>
                 </div>
@@ -46,7 +45,7 @@ function App() {
                         <Navbar />
                         <div className="content-page">
                             <Sidebar />
-                            {<AppRouter />}
+                            <AppRouter />
                         </div>
                     </Suspense>
                 </div>

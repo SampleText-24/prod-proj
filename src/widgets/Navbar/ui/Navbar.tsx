@@ -42,16 +42,14 @@ const NavbarDeprecated = ({ className }: NavbarProps) => {
     );
 };
 
-const NavbarRedesigned = ({ className }: NavbarProps) => {
-    return (
-        <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
-            <HStack gap="16" className={cls.actions}>
-                <NotificationButton />
-                <AvatarDropdown />
-            </HStack>
-        </header>
-    );
-};
+const NavbarRedesigned = ({ className }: NavbarProps) => (
+    <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+        <HStack gap="16" className={cls.actions}>
+            <NotificationButton />
+            <AvatarDropdown />
+        </HStack>
+    </header>
+);
 
 // Компоненты без асинхронных чанков экспортитуются так
 export const Navbar = memo(({ className }: NavbarProps) => {

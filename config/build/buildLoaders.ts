@@ -4,14 +4,26 @@ import { buildCssLoader } from './loaders/buildCssLoader';
 import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-    // Выносим отдельные лоадеры т.к. важно в каком порядке они возвращаются.
-    // С помощью вынесения проще увидеть чёткую последовательность
-
     const { isDev } = options;
 
     const svgLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: [{
+            loader: '@svgr/webpack',
+            options: {
+                icon: true,
+                svgoConfig: {
+                    plugins: [
+                        {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true,
+                            }
+                        }
+                    ]
+                }
+            }
+        }],
     };
 
     const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
@@ -19,7 +31,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev);
 
-    // Если не использовать typescript - нужен babel-loader для работы с jsx
+    // Если не используем тайпскрипт - нужен babel-loader
     // const typescriptLoader = {
     //     test: /\.tsx?$/,
     //     use: 'ts-loader',
@@ -27,7 +39,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     // };
 
     const fileLoader = {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
             {
                 loader: 'file-loader',
