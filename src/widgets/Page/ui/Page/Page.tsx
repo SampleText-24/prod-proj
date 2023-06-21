@@ -48,7 +48,7 @@ export const Page = memo((props: PageProps) => {
     });
 
     const style = toggleFeatures({
-        name: 'isAppRedesigned',
+        feature: 'isAppRedesigned',
         on: () => cls.PageRedesigned,
         off: () => cls.Page,
     });
