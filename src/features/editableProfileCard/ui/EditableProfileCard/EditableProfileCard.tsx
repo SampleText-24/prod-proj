@@ -11,7 +11,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';

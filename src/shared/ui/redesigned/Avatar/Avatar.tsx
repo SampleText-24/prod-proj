@@ -4,7 +4,7 @@ import cls from './Avatar.module.scss';
 import { AppImage } from '../../redesigned/AppImage/AppImage';
 import UserIcon from '../../../assets/icons/user-32-32.svg';
 import { Icon } from '../Icon/Icon';
-import { Skeleton } from '../Skeleton/Skeleton';
+import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
     className?: string;
@@ -13,9 +13,6 @@ interface AvatarProps {
     alt?: string;
 }
 
-/**
- * @deprecated
- */
 export const Avatar = ({ className, src, size, alt }: AvatarProps) => {
     const styles = useMemo<CSSProperties>(
         () => ({
