@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+.round {
+    border-radius: 32px;
+}
+
 .normal {
     background: var(--dark-bg-redesigned);
 }
@@ -16,6 +20,7 @@
 
 .light {
     border: 1px solid var(--light-bg-redesigned);
+    background: var(--light-bg-redesigned);
 }
 
 .max {

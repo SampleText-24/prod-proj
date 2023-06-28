@@ -16,6 +16,13 @@
     outline: none;
 }
 
+.filled {
+    padding: 8px 16px;
+    background: var(--light-bg-redesigned);
+    border: none;
+    border-radius: 34px;
+}
+
 .square {
     padding: 0;
 }
