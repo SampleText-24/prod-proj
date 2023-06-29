@@ -4,6 +4,13 @@
 @import "themes/dark";
 @import "themes/aqua";
 
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .app,
 .app_modal,
 .app_drawer {
