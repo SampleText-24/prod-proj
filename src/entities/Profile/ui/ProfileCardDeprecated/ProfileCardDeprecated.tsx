@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import cls from './ProfileCardDeprecated.module.scss';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
@@ -7,7 +8,6 @@ import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { CurrencySelect } from '@/entities/Currency';
 import { CountrySelect } from '@/entities/Country';
 import { ProfileCardProps } from '../ProfileCard/ProfileCard';
-import { useTranslation } from 'react-i18next';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import {
     Text as TextDeprecated,
@@ -15,17 +15,15 @@ import {
     TextTheme,
 } from '@/shared/ui/deprecated/Text';
 
-export const ProfileCardDeprecatedLoader = () => {
-    return (
-        <HStack
-            max
-            justify="center"
-            className={classNames(cls.ProfileCard, { [cls.loading]: true }, [])}
-        >
-            <Loader />
-        </HStack>
-    );
-};
+export const ProfileCardDeprecatedLoader = () => (
+    <HStack
+        max
+        justify="center"
+        className={classNames(cls.ProfileCard, { [cls.loading]: true }, [])}
+    >
+        <Loader />
+    </HStack>
+);
 
 export const ProfileCardDeprecatedError = () => {
     const { t } = useTranslation('profile');

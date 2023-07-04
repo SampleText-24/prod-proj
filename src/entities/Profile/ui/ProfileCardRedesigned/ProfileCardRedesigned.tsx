@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ProfileCardProps } from '../ProfileCard/ProfileCard';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -6,35 +7,32 @@ import { Input } from '@/shared/ui/redesigned/Input';
 import { CurrencySelect } from '@/entities/Currency';
 import { CountrySelect } from '@/entities/Country';
 import { Card } from '@/shared/ui/redesigned/Card';
-import { useTranslation } from 'react-i18next';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { Text } from '@/shared/ui/redesigned/Text';
 
-export const ProfileCardRedesignedSkeleton = () => {
-    return (
-        <Card padding="24" max>
-            <VStack gap="32">
-                <HStack justify="center" max>
-                    <Skeleton border="100%" width={128} height={128} />
-                </HStack>
-                <HStack gap="32" max>
-                    <VStack gap="16" max>
-                        <Skeleton width="100%" height={38} />
-                        <Skeleton width="100%" height={38} />
-                        <Skeleton width="100%" height={38} />
-                        <Skeleton width="100%" height={38} />
-                    </VStack>
-                    <VStack gap="16" max>
-                        <Skeleton width="100%" height={38} />
-                        <Skeleton width="100%" height={38} />
-                        <Skeleton width="100%" height={38} />
-                        <Skeleton width="100%" height={38} />
-                    </VStack>
-                </HStack>
-            </VStack>
-        </Card>
-    );
-};
+export const ProfileCardRedesignedSkeleton = () => (
+    <Card padding="24" max>
+        <VStack gap="32">
+            <HStack justify="center" max>
+                <Skeleton border="100%" width={128} height={128} />
+            </HStack>
+            <HStack gap="32" max>
+                <VStack gap="16" max>
+                    <Skeleton width="100%" height={38} />
+                    <Skeleton width="100%" height={38} />
+                    <Skeleton width="100%" height={38} />
+                    <Skeleton width="100%" height={38} />
+                </VStack>
+                <VStack gap="16" max>
+                    <Skeleton width="100%" height={38} />
+                    <Skeleton width="100%" height={38} />
+                    <Skeleton width="100%" height={38} />
+                    <Skeleton width="100%" height={38} />
+                </VStack>
+            </HStack>
+        </VStack>
+    </Card>
+);
 
 export const ProfileCardRedesignedError = () => {
     const { t } = useTranslation('profile');
