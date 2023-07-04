@@ -79,7 +79,7 @@ export const ArticlesSortSelector = ({
                         [className],
                     )}
                 >
-                    <VStack gap="8">
+                    <VStack align="start" gap="8">
                         <Text text={t('Сортировать по')} />
                         <ListBox
                             items={sortFieldOptions}

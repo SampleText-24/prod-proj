@@ -43,9 +43,10 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
             padding="24"
             className={classNames(cls.ArticlesFilters, {}, [className])}
         >
-            <VStack gap="32">
+            <VStack align="start" gap="32">
                 <Input
                     onChange={onChangeSearch}
+                    size="s"
                     placeholder={t('Поиск')}
                     value={search}
                     addonLeft={<Icon Svg={SearchIcon} />}
