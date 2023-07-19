@@ -7,6 +7,8 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import cls from './ArticleList.module.scss';
 import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListProps {
     className?: string;
@@ -60,12 +62,31 @@ export const ArticleList = ({
     }
 
     return (
-        <div
-            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-            data-testid="ArticleList"
-        >
-            {articles.length > 0 ? articles.map(renderArticle) : null}
-            {isLoading && getSkeletons(view)}
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <HStack
+                    wrap="wrap"
+                    gap="16"
+                    className={classNames(cls.ArticleListRedesigned, {}, [])}
+                    data-testid="ArticleList"
+                >
+                    {articles.length > 0 ? articles.map(renderArticle) : null}
+                    {isLoading && getSkeletons(view)}
+                </HStack>
+            }
+            off={
+                <div
+                    className={classNames(cls.ArticleList, {}, [
+                        className,
+                        cls[view],
+                    ])}
+                    data-testid="ArticleList"
+                >
+                    {articles.length > 0 ? articles.map(renderArticle) : null}
+                    {isLoading && getSkeletons(view)}
+                </div>
+            }
+        />
     );
 };
