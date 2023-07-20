@@ -32,7 +32,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         </>
     );
     const views = (
-        <HStack gap="8">
+        <HStack align="center" gap="8">
             <Icon Svg={EyeIcon} />
             <Text text={String(article.views)} className={cls.views} />
         </HStack>
@@ -118,14 +118,16 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                 <VStack className={cls.info} align="start" gap="4">
                     <Text text={article.title} />
                     <VStack align="start" className={cls.footer} max gap="4">
-                        <HStack justify="between">
+                        <HStack align="center" justify="between">
                             <Text
                                 text={article.createdAt}
                                 className={cls.date}
                             />
                             {views}
                         </HStack>
-                        <HStack gap="4">{userInfo}</HStack>
+                        <HStack align="center" gap="4">
+                            {userInfo}
+                        </HStack>
                     </VStack>
                 </VStack>
             </Card>

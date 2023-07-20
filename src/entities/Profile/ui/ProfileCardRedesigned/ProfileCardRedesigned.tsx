@@ -72,7 +72,7 @@ export const ProfileCardRedesigned = memo(
                         </HStack>
                     )}
                     <HStack max gap="24">
-                        <VStack align="center" max gap="16">
+                        <VStack max gap="16">
                             <Input
                                 value={data?.firstname}
                                 label={t('Имя')}
@@ -100,7 +100,7 @@ export const ProfileCardRedesigned = memo(
                                 readonly={readonly}
                             />
                         </VStack>
-                        <VStack align="start" max gap="16">
+                        <VStack max gap="16">
                             <Input
                                 value={data?.username}
                                 label={t('Ник')}

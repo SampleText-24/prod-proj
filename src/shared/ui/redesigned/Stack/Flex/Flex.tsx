@@ -56,7 +56,7 @@ export const Flex = ({
     children,
     justify = 'start',
     direction = 'row',
-    align = 'center',
+    align = 'start',
     wrap = 'nowrap',
     gap = '8',
     max,
