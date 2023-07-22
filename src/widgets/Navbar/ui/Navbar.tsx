@@ -34,7 +34,7 @@ const NavbarDeprecated = ({ className }: NavbarProps) => {
             >
                 {t('Создать статью')}
             </AppLink>
-            <HStack gap="16" className={cls.actions}>
+            <HStack gap="16" align="center" className={cls.actions}>
                 <NotificationButton />
                 <AvatarDropdown />
             </HStack>
@@ -44,7 +44,7 @@ const NavbarDeprecated = ({ className }: NavbarProps) => {
 
 const NavbarRedesigned = ({ className }: NavbarProps) => (
     <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
-        <HStack gap="16" className={cls.actions}>
+        <HStack gap="16" align="center" className={cls.actions}>
             <NotificationButton />
             <AvatarDropdown />
         </HStack>
