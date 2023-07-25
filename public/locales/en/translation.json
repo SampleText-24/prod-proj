@@ -37,5 +37,7 @@
   "Создать статью": "Create article",
   "Профиль": "Profile",
   "Список статей": "Article",
-  "Админка": "Admin panel"
+  "Админка": "Admin panel",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views"
 }
