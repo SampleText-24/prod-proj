@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-    className: string;
+    className?: string;
     fallback?: ReactElement;
     errorFallback?: ReactElement;
 }
